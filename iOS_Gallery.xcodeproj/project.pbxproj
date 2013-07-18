@@ -13,6 +13,11 @@
 		0C745F721798049900CFE801 /* network.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F6F1798049900CFE801 /* network.png */; };
 		0C745F731798049900CFE801 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F701798049900CFE801 /* setting.png */; };
 		0C745F78179804DF00CFE801 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F7A179804DF00CFE801 /* Localizable.strings */; };
+		0C745F7F1798078100CFE801 /* PictureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F7E1798078100CFE801 /* PictureTableViewController.m */; };
+		0C745F82179807ED00CFE801 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F81179807EC00CFE801 /* ListTableViewController.m */; };
+		0C745F85179808E200CFE801 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C745F83179808D600CFE801 /* AssetsLibrary.framework */; };
+		0C745F881798090E00CFE801 /* ShowAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F871798090D00CFE801 /* ShowAlertView.m */; };
+		0C745F8C17980B5700CFE801 /* VideoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F8B17980B5600CFE801 /* VideoTableViewController.m */; };
 		0C9199FD1796B3EB004B205C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FC1796B3EB004B205C /* UIKit.framework */; };
 		0C9199FF1796B3EB004B205C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FE1796B3EB004B205C /* Foundation.framework */; };
 		0C919A011796B3EB004B205C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C919A001796B3EB004B205C /* CoreGraphics.framework */; };
@@ -52,6 +57,15 @@
 		0C745F77179804D600CFE801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		0C745F79179804DF00CFE801 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0C745F7B179804E300CFE801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0C745F7D1798078100CFE801 /* PictureTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureTableViewController.h; sourceTree = "<group>"; };
+		0C745F7E1798078100CFE801 /* PictureTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureTableViewController.m; sourceTree = "<group>"; };
+		0C745F80179807EC00CFE801 /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
+		0C745F81179807EC00CFE801 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
+		0C745F83179808D600CFE801 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		0C745F861798090D00CFE801 /* ShowAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAlertView.h; sourceTree = "<group>"; };
+		0C745F871798090D00CFE801 /* ShowAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAlertView.m; sourceTree = "<group>"; };
+		0C745F8A17980B5600CFE801 /* VideoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTableViewController.h; sourceTree = "<group>"; };
+		0C745F8B17980B5600CFE801 /* VideoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewController.m; sourceTree = "<group>"; };
 		0C9199F91796B3EB004B205C /* iOS_Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9199FC1796B3EB004B205C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0C9199FE1796B3EB004B205C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -80,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C745F85179808E200CFE801 /* AssetsLibrary.framework in Frameworks */,
 				0C9199FD1796B3EB004B205C /* UIKit.framework in Frameworks */,
 				0C9199FF1796B3EB004B205C /* Foundation.framework in Frameworks */,
 				0C919A011796B3EB004B205C /* CoreGraphics.framework in Frameworks */,
@@ -130,10 +145,57 @@
 		0C745F7C1798071800CFE801 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				0C745F8D17980E5C00CFE801 /* Home */,
+				0C745F8E17980E6100CFE801 /* Picture */,
+				0C745F8F17980E6600CFE801 /* Video */,
+				0C745F9017980E6900CFE801 /* List */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		0C745F891798091200CFE801 /* ShowAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				0C745F861798090D00CFE801 /* ShowAlertView.h */,
+				0C745F871798090D00CFE801 /* ShowAlertView.m */,
+			);
+			name = ShowAlertView;
+			sourceTree = "<group>";
+		};
+		0C745F8D17980E5C00CFE801 /* Home */ = {
+			isa = PBXGroup;
+			children = (
 				0C745F641798035B00CFE801 /* HomeTableViewController.h */,
 				0C745F651798035B00CFE801 /* HomeTableViewController.m */,
 			);
-			name = TableView;
+			name = Home;
+			sourceTree = "<group>";
+		};
+		0C745F8E17980E6100CFE801 /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				0C745F7D1798078100CFE801 /* PictureTableViewController.h */,
+				0C745F7E1798078100CFE801 /* PictureTableViewController.m */,
+			);
+			name = Picture;
+			sourceTree = "<group>";
+		};
+		0C745F8F17980E6600CFE801 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				0C745F8A17980B5600CFE801 /* VideoTableViewController.h */,
+				0C745F8B17980B5600CFE801 /* VideoTableViewController.m */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
+		0C745F9017980E6900CFE801 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				0C745F80179807EC00CFE801 /* ListTableViewController.h */,
+				0C745F81179807EC00CFE801 /* ListTableViewController.m */,
+			);
+			name = List;
 			sourceTree = "<group>";
 		};
 		0C9199F01796B3EB004B205C = {
@@ -158,6 +220,7 @@
 		0C9199FB1796B3EB004B205C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C745F83179808D600CFE801 /* AssetsLibrary.framework */,
 				0C9199FC1796B3EB004B205C /* UIKit.framework */,
 				0C9199FE1796B3EB004B205C /* Foundation.framework */,
 				0C919A001796B3EB004B205C /* CoreGraphics.framework */,
@@ -174,6 +237,7 @@
 				0C919A141796B3EC004B205C /* MainStoryboard_iPhone.storyboard */,
 				0C919A171796B3EC004B205C /* MainStoryboard_iPad.storyboard */,
 				0C745F7C1798071800CFE801 /* TableView */,
+				0C745F891798091200CFE801 /* ShowAlertView */,
 				0C745F671798047100CFE801 /* Ressource */,
 				0C919A031796B3EB004B205C /* Supporting Files */,
 			);
@@ -333,6 +397,10 @@
 				0C919A091796B3EB004B205C /* main.m in Sources */,
 				0C919A0D1796B3EB004B205C /* AppDelegate.m in Sources */,
 				0C745F661798035B00CFE801 /* HomeTableViewController.m in Sources */,
+				0C745F7F1798078100CFE801 /* PictureTableViewController.m in Sources */,
+				0C745F82179807ED00CFE801 /* ListTableViewController.m in Sources */,
+				0C745F881798090E00CFE801 /* ShowAlertView.m in Sources */,
+				0C745F8C17980B5700CFE801 /* VideoTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

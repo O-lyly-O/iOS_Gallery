@@ -4,8 +4,8 @@
 <dict>
 	<key>galleryIdentifier</key>
 	<array>
-		<string>PictureGalleryViewController</string>
-		<string>VideoGalleryViewController</string>
+		<string>PictureTableViewController</string>
+		<string>VideoTableViewController</string>
 	</array>
 	<key>galleryName</key>
 	<array>

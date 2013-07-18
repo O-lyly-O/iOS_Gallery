@@ -11,6 +11,7 @@
 @interface HomeTableViewController : UITableViewController{
     NSArray* mIconName;
     NSArray* mGalleryName;
+    NSArray* mGalleryIdentifier;
 }
 
 @end

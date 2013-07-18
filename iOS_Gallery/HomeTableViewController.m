@@ -16,7 +16,13 @@
     NSDictionary* propertiesList = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Property List" ofType:@"plist"]];
     mIconName = [NSArray arrayWithArray:[propertiesList objectForKey:@"iconName"]];
     mGalleryName = [NSArray arrayWithArray:[propertiesList objectForKey:@"galleryName"]];
-    [self.tableView setBounces:NO];
+    mGalleryIdentifier = [NSArray arrayWithArray:[propertiesList objectForKey:@"galleryIdentifier"]];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -41,7 +47,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    UITableViewController* tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:[mGalleryIdentifier objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:tableViewController animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
