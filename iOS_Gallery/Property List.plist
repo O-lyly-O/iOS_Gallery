@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>galleryIdentifier</key>
+	<array>
+		<string>PictureGalleryViewController</string>
+		<string>VideoGalleryViewController</string>
+	</array>
+	<key>galleryName</key>
+	<array>
+		<string>picture</string>
+		<string>video</string>
+	</array>
+	<key>iconName</key>
+	<array>
+		<string>iPhone5.png</string>
+		<string>network.png</string>
+	</array>
+</dict>
+</plist>

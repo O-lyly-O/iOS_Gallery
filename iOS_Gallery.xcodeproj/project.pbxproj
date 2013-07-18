@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C745F661798035B00CFE801 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F651798035B00CFE801 /* HomeTableViewController.m */; };
+		0C745F6C1798048F00CFE801 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F6A1798048F00CFE801 /* Property List.plist */; };
+		0C745F711798049900CFE801 /* iPhone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F6E1798049900CFE801 /* iPhone5.png */; };
+		0C745F721798049900CFE801 /* network.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F6F1798049900CFE801 /* network.png */; };
+		0C745F731798049900CFE801 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F701798049900CFE801 /* setting.png */; };
+		0C745F78179804DF00CFE801 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F7A179804DF00CFE801 /* Localizable.strings */; };
 		0C9199FD1796B3EB004B205C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FC1796B3EB004B205C /* UIKit.framework */; };
 		0C9199FF1796B3EB004B205C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FE1796B3EB004B205C /* Foundation.framework */; };
 		0C919A011796B3EB004B205C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C919A001796B3EB004B205C /* CoreGraphics.framework */; };
@@ -18,7 +24,6 @@
 		0C919A131796B3EC004B205C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C919A121796B3EC004B205C /* Default-568h@2x.png */; };
 		0C919A161796B3EC004B205C /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C919A141796B3EC004B205C /* MainStoryboard_iPhone.storyboard */; };
 		0C919A191796B3EC004B205C /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C919A171796B3EC004B205C /* MainStoryboard_iPad.storyboard */; };
-		0C919A1C1796B3EC004B205C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C919A1B1796B3EC004B205C /* ViewController.m */; };
 		0C919A241796B3EC004B205C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C919A231796B3EC004B205C /* SenTestingKit.framework */; };
 		0C919A251796B3ED004B205C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FC1796B3EB004B205C /* UIKit.framework */; };
 		0C919A261796B3ED004B205C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FE1796B3EB004B205C /* Foundation.framework */; };
@@ -37,6 +42,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C745F641798035B00CFE801 /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
+		0C745F651798035B00CFE801 /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
+		0C745F6A1798048F00CFE801 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		0C745F6E1798049900CFE801 /* iPhone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone5.png; sourceTree = "<group>"; };
+		0C745F6F1798049900CFE801 /* network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = network.png; sourceTree = "<group>"; };
+		0C745F701798049900CFE801 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		0C745F76179804D600CFE801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		0C745F77179804D600CFE801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		0C745F79179804DF00CFE801 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0C745F7B179804E300CFE801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0C9199F91796B3EB004B205C /* iOS_Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9199FC1796B3EB004B205C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0C9199FE1796B3EB004B205C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,8 +67,6 @@
 		0C919A121796B3EC004B205C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0C919A151796B3EC004B205C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		0C919A181796B3EC004B205C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		0C919A1A1796B3EC004B205C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0C919A1B1796B3EC004B205C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0C919A221796B3EC004B205C /* iOS_GalleryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_GalleryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C919A231796B3EC004B205C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0C919A2B1796B3ED004B205C /* iOS_GalleryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS_GalleryTests-Info.plist"; sourceTree = "<group>"; };
@@ -86,6 +99,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C745F671798047100CFE801 /* Ressource */ = {
+			isa = PBXGroup;
+			children = (
+				0C745F691798047B00CFE801 /* Property List */,
+				0C745F681798047600CFE801 /* Picture */,
+			);
+			name = Ressource;
+			sourceTree = "<group>";
+		};
+		0C745F681798047600CFE801 /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				0C745F6E1798049900CFE801 /* iPhone5.png */,
+				0C745F6F1798049900CFE801 /* network.png */,
+				0C745F701798049900CFE801 /* setting.png */,
+			);
+			name = Picture;
+			sourceTree = "<group>";
+		};
+		0C745F691798047B00CFE801 /* Property List */ = {
+			isa = PBXGroup;
+			children = (
+				0C745F6A1798048F00CFE801 /* Property List.plist */,
+				0C745F7A179804DF00CFE801 /* Localizable.strings */,
+			);
+			name = "Property List";
+			sourceTree = "<group>";
+		};
+		0C745F7C1798071800CFE801 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				0C745F641798035B00CFE801 /* HomeTableViewController.h */,
+				0C745F651798035B00CFE801 /* HomeTableViewController.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
 		0C9199F01796B3EB004B205C = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +173,8 @@
 				0C919A0C1796B3EB004B205C /* AppDelegate.m */,
 				0C919A141796B3EC004B205C /* MainStoryboard_iPhone.storyboard */,
 				0C919A171796B3EC004B205C /* MainStoryboard_iPad.storyboard */,
-				0C919A1A1796B3EC004B205C /* ViewController.h */,
-				0C919A1B1796B3EC004B205C /* ViewController.m */,
+				0C745F7C1798071800CFE801 /* TableView */,
+				0C745F671798047100CFE801 /* Ressource */,
 				0C919A031796B3EB004B205C /* Supporting Files */,
 			);
 			path = iOS_Gallery;
@@ -217,6 +267,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = 0C9199F01796B3EB004B205C;
 			productRefGroup = 0C9199FA1796B3EB004B205C /* Products */;
@@ -240,6 +291,11 @@
 				0C919A131796B3EC004B205C /* Default-568h@2x.png in Resources */,
 				0C919A161796B3EC004B205C /* MainStoryboard_iPhone.storyboard in Resources */,
 				0C919A191796B3EC004B205C /* MainStoryboard_iPad.storyboard in Resources */,
+				0C745F6C1798048F00CFE801 /* Property List.plist in Resources */,
+				0C745F711798049900CFE801 /* iPhone5.png in Resources */,
+				0C745F721798049900CFE801 /* network.png in Resources */,
+				0C745F731798049900CFE801 /* setting.png in Resources */,
+				0C745F78179804DF00CFE801 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +332,7 @@
 			files = (
 				0C919A091796B3EB004B205C /* main.m in Sources */,
 				0C919A0D1796B3EB004B205C /* AppDelegate.m in Sources */,
-				0C919A1C1796B3EC004B205C /* ViewController.m in Sources */,
+				0C745F661798035B00CFE801 /* HomeTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +355,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0C745F7A179804DF00CFE801 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C745F79179804DF00CFE801 /* en */,
+				0C745F7B179804E300CFE801 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0C919A051796B3EB004B205C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -311,6 +376,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0C919A151796B3EC004B205C /* en */,
+				0C745F76179804D600CFE801 /* fr */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -319,6 +385,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0C919A181796B3EC004B205C /* en */,
+				0C745F77179804D600CFE801 /* fr */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -467,6 +534,7 @@
 				0C919A361796B3ED004B205C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C919A371796B3ED004B205C /* Build configuration list for PBXNativeTarget "iOS_GalleryTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +543,7 @@
 				0C919A391796B3ED004B205C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

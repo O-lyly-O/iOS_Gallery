@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  iOS_Gallery
+
+  Created by Charly Poilane on 18/07/13.
+  Copyright (c) 2013 CharlyPoilane. All rights reserved.
+*/
+
+//HomeViewcontroller
+"picture" = "Photos";
+"video" = "Vidéos";
+
+//Errors
+"accessError" = "Gallery Inaccessible";
+"userDeclinedAccess" = "L'utilisateur a refusé l'accès à la galerie";
+"errorAccessUnknow" = "Raison Inconnue";
