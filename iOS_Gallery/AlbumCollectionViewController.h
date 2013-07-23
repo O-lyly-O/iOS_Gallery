@@ -1,17 +1,18 @@
 //
-//  PictureTableViewController.h
+//  GalleryCollectionViewController.h
 //  iOS_Gallery
 //
-//  Created by Charly Poilane on 18/07/13.
+//  Created by Charly on 18/07/13.
 //  Copyright (c) 2013 CharlyPoilane. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "ShowAlertView.h"
-#import "ListTableViewController.h"
+#import "AlbumCell.h"
+#import "ListCollectionViewController.h"
 
-@interface PictureTableViewController : UITableViewController{
+@interface AlbumCollectionViewController : UICollectionViewController{
     ALAssetsLibrary *mAssetsLibrary;
     NSMutableArray *mGroups;
 }

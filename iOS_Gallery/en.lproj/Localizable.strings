@@ -7,8 +7,7 @@
 */
 
 //HomeViewcontroller
-"picture" = "Pictures";
-"video" = "Videos";
+"gallery" = "Gallery";
 
 //Errors
 "accessError" = "Unreachable Gallery";

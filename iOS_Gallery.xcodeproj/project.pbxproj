@@ -13,11 +13,8 @@
 		0C745F721798049900CFE801 /* network.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F6F1798049900CFE801 /* network.png */; };
 		0C745F731798049900CFE801 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F701798049900CFE801 /* setting.png */; };
 		0C745F78179804DF00CFE801 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F7A179804DF00CFE801 /* Localizable.strings */; };
-		0C745F7F1798078100CFE801 /* PictureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F7E1798078100CFE801 /* PictureTableViewController.m */; };
-		0C745F82179807ED00CFE801 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F81179807EC00CFE801 /* ListTableViewController.m */; };
 		0C745F85179808E200CFE801 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C745F83179808D600CFE801 /* AssetsLibrary.framework */; };
 		0C745F881798090E00CFE801 /* ShowAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F871798090D00CFE801 /* ShowAlertView.m */; };
-		0C745F8C17980B5700CFE801 /* VideoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F8B17980B5600CFE801 /* VideoTableViewController.m */; };
 		0C9199FD1796B3EB004B205C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FC1796B3EB004B205C /* UIKit.framework */; };
 		0C9199FF1796B3EB004B205C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FE1796B3EB004B205C /* Foundation.framework */; };
 		0C919A011796B3EB004B205C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C919A001796B3EB004B205C /* CoreGraphics.framework */; };
@@ -34,6 +31,18 @@
 		0C919A261796B3ED004B205C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FE1796B3EB004B205C /* Foundation.framework */; };
 		0C919A2E1796B3ED004B205C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C919A2C1796B3ED004B205C /* InfoPlist.strings */; };
 		0C919A311796B3ED004B205C /* iOS_GalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C919A301796B3ED004B205C /* iOS_GalleryTests.m */; };
+		EA781358179DCC3900ADD792 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EA781357179DCC3900ADD792 /* playButton.png */; };
+		EA78135A179DD3AF00ADD792 /* Play.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA781359179DD3AF00ADD792 /* Play.xib */; };
+		EAAE0C20179879CE002D8224 /* ListCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE0C1F179879CE002D8224 /* ListCollectionViewController.m */; };
+		EAAE0C26179884C6002D8224 /* picture-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = EAAE0C25179884C6002D8224 /* picture-frame.png */; };
+		EAAE0C2917988641002D8224 /* AlbumCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE0C2817988641002D8224 /* AlbumCollectionViewController.m */; };
+		EAAE0C2D179887AB002D8224 /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE0C2B179887AB002D8224 /* AlbumCell.m */; };
+		EAAE0C2E179887AB002D8224 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAAE0C2C179887AB002D8224 /* AlbumCell.xib */; };
+		EAAE0C3D179891C0002D8224 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAE0C3B179891B8002D8224 /* QuartzCore.framework */; };
+		EAAE0C4517989843002D8224 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE0C3F17989843002D8224 /* PhotoViewController.m */; };
+		EAAE0C4617989843002D8224 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE0C4117989843002D8224 /* ImageScrollView.m */; };
+		EAAE0C4717989843002D8224 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE0C4417989843002D8224 /* GalleryViewController.m */; };
+		EADCE0B8179DE36700D41550 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADCE0B6179DE35E00D41550 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,17 +64,11 @@
 		0C745F701798049900CFE801 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		0C745F76179804D600CFE801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		0C745F77179804D600CFE801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		0C745F79179804DF00CFE801 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0C745F7B179804E300CFE801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0C745F7D1798078100CFE801 /* PictureTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureTableViewController.h; sourceTree = "<group>"; };
-		0C745F7E1798078100CFE801 /* PictureTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureTableViewController.m; sourceTree = "<group>"; };
-		0C745F80179807EC00CFE801 /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
-		0C745F81179807EC00CFE801 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
+		0C745F79179804DF00CFE801 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0C745F7B179804E300CFE801 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0C745F83179808D600CFE801 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0C745F861798090D00CFE801 /* ShowAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAlertView.h; sourceTree = "<group>"; };
 		0C745F871798090D00CFE801 /* ShowAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAlertView.m; sourceTree = "<group>"; };
-		0C745F8A17980B5600CFE801 /* VideoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTableViewController.h; sourceTree = "<group>"; };
-		0C745F8B17980B5600CFE801 /* VideoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewController.m; sourceTree = "<group>"; };
 		0C9199F91796B3EB004B205C /* iOS_Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9199FC1796B3EB004B205C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0C9199FE1796B3EB004B205C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +90,25 @@
 		0C919A2D1796B3ED004B205C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C919A2F1796B3ED004B205C /* iOS_GalleryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_GalleryTests.h; sourceTree = "<group>"; };
 		0C919A301796B3ED004B205C /* iOS_GalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_GalleryTests.m; sourceTree = "<group>"; };
+		EA781357179DCC3900ADD792 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
+		EA781359179DD3AF00ADD792 /* Play.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Play.xib; sourceTree = "<group>"; };
+		EAAE0C1E179879CE002D8224 /* ListCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCollectionViewController.h; sourceTree = "<group>"; };
+		EAAE0C1F179879CE002D8224 /* ListCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCollectionViewController.m; sourceTree = "<group>"; };
+		EAAE0C25179884C6002D8224 /* picture-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picture-frame.png"; sourceTree = "<group>"; };
+		EAAE0C2717988641002D8224 /* AlbumCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewController.h; sourceTree = "<group>"; };
+		EAAE0C2817988641002D8224 /* AlbumCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewController.m; sourceTree = "<group>"; };
+		EAAE0C2A179887AB002D8224 /* AlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCell.h; sourceTree = "<group>"; };
+		EAAE0C2B179887AB002D8224 /* AlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCell.m; sourceTree = "<group>"; };
+		EAAE0C2C179887AB002D8224 /* AlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
+		EAAE0C3B179891B8002D8224 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EAAE0C3E17989843002D8224 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		EAAE0C3F17989843002D8224 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		EAAE0C4017989843002D8224 /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
+		EAAE0C4117989843002D8224 /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
+		EAAE0C4217989843002D8224 /* onTapOnPageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = onTapOnPageDelegate.h; sourceTree = "<group>"; };
+		EAAE0C4317989843002D8224 /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
+		EAAE0C4417989843002D8224 /* GalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
+		EADCE0B6179DE35E00D41550 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADCE0B8179DE36700D41550 /* MediaPlayer.framework in Frameworks */,
+				EAAE0C3D179891C0002D8224 /* QuartzCore.framework in Frameworks */,
 				0C745F85179808E200CFE801 /* AssetsLibrary.framework in Frameworks */,
 				0C9199FD1796B3EB004B205C /* UIKit.framework in Frameworks */,
 				0C9199FF1796B3EB004B205C /* Foundation.framework in Frameworks */,
@@ -126,6 +150,8 @@
 		0C745F681798047600CFE801 /* Picture */ = {
 			isa = PBXGroup;
 			children = (
+				EA781357179DCC3900ADD792 /* playButton.png */,
+				EAAE0C25179884C6002D8224 /* picture-frame.png */,
 				0C745F6E1798049900CFE801 /* iPhone5.png */,
 				0C745F6F1798049900CFE801 /* network.png */,
 				0C745F701798049900CFE801 /* setting.png */,
@@ -145,9 +171,9 @@
 		0C745F7C1798071800CFE801 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				EAAE0C2F17989006002D8224 /* Gallery */,
 				0C745F8D17980E5C00CFE801 /* Home */,
-				0C745F8E17980E6100CFE801 /* Picture */,
-				0C745F8F17980E6600CFE801 /* Video */,
+				0C745F8E17980E6100CFE801 /* Album */,
 				0C745F9017980E6900CFE801 /* List */,
 			);
 			name = TableView;
@@ -171,29 +197,23 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
-		0C745F8E17980E6100CFE801 /* Picture */ = {
+		0C745F8E17980E6100CFE801 /* Album */ = {
 			isa = PBXGroup;
 			children = (
-				0C745F7D1798078100CFE801 /* PictureTableViewController.h */,
-				0C745F7E1798078100CFE801 /* PictureTableViewController.m */,
+				EAAE0C2717988641002D8224 /* AlbumCollectionViewController.h */,
+				EAAE0C2817988641002D8224 /* AlbumCollectionViewController.m */,
+				EAAE0C2A179887AB002D8224 /* AlbumCell.h */,
+				EAAE0C2B179887AB002D8224 /* AlbumCell.m */,
+				EAAE0C2C179887AB002D8224 /* AlbumCell.xib */,
 			);
-			name = Picture;
-			sourceTree = "<group>";
-		};
-		0C745F8F17980E6600CFE801 /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				0C745F8A17980B5600CFE801 /* VideoTableViewController.h */,
-				0C745F8B17980B5600CFE801 /* VideoTableViewController.m */,
-			);
-			name = Video;
+			name = Album;
 			sourceTree = "<group>";
 		};
 		0C745F9017980E6900CFE801 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				0C745F80179807EC00CFE801 /* ListTableViewController.h */,
-				0C745F81179807EC00CFE801 /* ListTableViewController.m */,
+				EAAE0C1E179879CE002D8224 /* ListCollectionViewController.h */,
+				EAAE0C1F179879CE002D8224 /* ListCollectionViewController.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -220,6 +240,8 @@
 		0C9199FB1796B3EB004B205C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EADCE0B6179DE35E00D41550 /* MediaPlayer.framework */,
+				EAAE0C3B179891B8002D8224 /* QuartzCore.framework */,
 				0C745F83179808D600CFE801 /* AssetsLibrary.framework */,
 				0C9199FC1796B3EB004B205C /* UIKit.framework */,
 				0C9199FE1796B3EB004B205C /* Foundation.framework */,
@@ -275,6 +297,21 @@
 				0C919A2C1796B3ED004B205C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EAAE0C2F17989006002D8224 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				EAAE0C4317989843002D8224 /* GalleryViewController.h */,
+				EAAE0C4417989843002D8224 /* GalleryViewController.m */,
+				EAAE0C3E17989843002D8224 /* PhotoViewController.h */,
+				EAAE0C3F17989843002D8224 /* PhotoViewController.m */,
+				EAAE0C4017989843002D8224 /* ImageScrollView.h */,
+				EAAE0C4117989843002D8224 /* ImageScrollView.m */,
+				EAAE0C4217989843002D8224 /* onTapOnPageDelegate.h */,
+				EA781359179DD3AF00ADD792 /* Play.xib */,
+			);
+			name = Gallery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +397,10 @@
 				0C745F721798049900CFE801 /* network.png in Resources */,
 				0C745F731798049900CFE801 /* setting.png in Resources */,
 				0C745F78179804DF00CFE801 /* Localizable.strings in Resources */,
+				EAAE0C26179884C6002D8224 /* picture-frame.png in Resources */,
+				EAAE0C2E179887AB002D8224 /* AlbumCell.xib in Resources */,
+				EA781358179DCC3900ADD792 /* playButton.png in Resources */,
+				EA78135A179DD3AF00ADD792 /* Play.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +438,13 @@
 				0C919A091796B3EB004B205C /* main.m in Sources */,
 				0C919A0D1796B3EB004B205C /* AppDelegate.m in Sources */,
 				0C745F661798035B00CFE801 /* HomeTableViewController.m in Sources */,
-				0C745F7F1798078100CFE801 /* PictureTableViewController.m in Sources */,
-				0C745F82179807ED00CFE801 /* ListTableViewController.m in Sources */,
 				0C745F881798090E00CFE801 /* ShowAlertView.m in Sources */,
-				0C745F8C17980B5700CFE801 /* VideoTableViewController.m in Sources */,
+				EAAE0C20179879CE002D8224 /* ListCollectionViewController.m in Sources */,
+				EAAE0C2917988641002D8224 /* AlbumCollectionViewController.m in Sources */,
+				EAAE0C2D179887AB002D8224 /* AlbumCell.m in Sources */,
+				EAAE0C4517989843002D8224 /* PhotoViewController.m in Sources */,
+				EAAE0C4617989843002D8224 /* ImageScrollView.m in Sources */,
+				EAAE0C4717989843002D8224 /* GalleryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AlbumCollectionViewController.h"
 
 @interface HomeTableViewController : UITableViewController{
     NSArray* mIconName;

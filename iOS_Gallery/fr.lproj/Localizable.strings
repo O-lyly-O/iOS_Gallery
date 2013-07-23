@@ -7,10 +7,9 @@
 */
 
 //HomeViewcontroller
-"picture" = "Photos";
-"video" = "Vidéos";
+"gallery" = "Galerie";
 
 //Errors
-"accessError" = "Gallery Inaccessible";
+"accessError" = "Galerie Inaccessible";
 "userDeclinedAccess" = "L'utilisateur a refusé l'accès à la galerie";
 "errorAccessUnknow" = "Raison Inconnue";

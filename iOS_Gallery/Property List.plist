@@ -4,18 +4,15 @@
 <dict>
 	<key>galleryIdentifier</key>
 	<array>
-		<string>PictureTableViewController</string>
-		<string>VideoTableViewController</string>
+		<string>GalleryViewController</string>
 	</array>
 	<key>galleryName</key>
 	<array>
-		<string>picture</string>
-		<string>video</string>
+		<string>gallery</string>
 	</array>
 	<key>iconName</key>
 	<array>
 		<string>iPhone5.png</string>
-		<string>network.png</string>
 	</array>
 </dict>
 </plist>
