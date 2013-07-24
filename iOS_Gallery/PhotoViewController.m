@@ -29,11 +29,7 @@
 {
     ImageScrollView *scrollView = [[ImageScrollView alloc] init];
     scrollView.mDelegate = _delegate;
-    if(self.navigationController.navigationBarHidden){
-        scrollView.mHeightBar = 0;
-    }else{
-        scrollView.mHeightBar = self.navigationController.navigationBar.frame.size.height;
-    }
+    scrollView.mHeightBar = self.navigationController.navigationBarHidden ? 0 : self.navigationController.navigationBar.frame.size.height;
     scrollView.picture = mPicture;
     scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.view = scrollView;

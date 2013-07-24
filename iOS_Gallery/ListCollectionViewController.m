@@ -63,13 +63,13 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSMutableArray* thumbnailArray = [[NSMutableArray alloc] init];
+    NSMutableArray* pictureArray = [[NSMutableArray alloc] init];
     for(ALAsset* tmp in mAssets){
-        [thumbnailArray addObject:[UIImage imageWithCGImage:[tmp thumbnail]]];
+        [pictureArray addObject:[[Picture alloc] initPictureWithThumbnail:[UIImage imageWithCGImage:[tmp thumbnail]]]];
     }
     GalleryViewController* galleryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"GalleryViewController"];
     galleryViewController.mPictureBegin = indexPath.row;
-    galleryViewController.mThumbnailArray = thumbnailArray;
+    galleryViewController.mPictureArray = pictureArray;
     galleryViewController.mAssetsArray = mAssets;
     [self.navigationController pushViewController:galleryViewController animated:YES];
 }

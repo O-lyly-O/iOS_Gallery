@@ -15,6 +15,8 @@
 		0C745F78179804DF00CFE801 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C745F7A179804DF00CFE801 /* Localizable.strings */; };
 		0C745F85179808E200CFE801 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C745F83179808D600CFE801 /* AssetsLibrary.framework */; };
 		0C745F881798090E00CFE801 /* ShowAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C745F871798090D00CFE801 /* ShowAlertView.m */; };
+		0C8B31D3179FB178004B19E6 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8B31D1179FB16C004B19E6 /* ImageIO.framework */; };
+		0C8B31D6179FB1AF004B19E6 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8B31D4179FB1A8004B19E6 /* CoreFoundation.framework */; };
 		0C9199FD1796B3EB004B205C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FC1796B3EB004B205C /* UIKit.framework */; };
 		0C9199FF1796B3EB004B205C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FE1796B3EB004B205C /* Foundation.framework */; };
 		0C919A011796B3EB004B205C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C919A001796B3EB004B205C /* CoreGraphics.framework */; };
@@ -31,8 +33,8 @@
 		0C919A261796B3ED004B205C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9199FE1796B3EB004B205C /* Foundation.framework */; };
 		0C919A2E1796B3ED004B205C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C919A2C1796B3ED004B205C /* InfoPlist.strings */; };
 		0C919A311796B3ED004B205C /* iOS_GalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C919A301796B3ED004B205C /* iOS_GalleryTests.m */; };
+		EA1DE375179F08AB00031D95 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1DE374179F08AB00031D95 /* Picture.m */; };
 		EA781358179DCC3900ADD792 /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EA781357179DCC3900ADD792 /* playButton.png */; };
-		EA78135A179DD3AF00ADD792 /* Play.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA781359179DD3AF00ADD792 /* Play.xib */; };
 		EAAE0C20179879CE002D8224 /* ListCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE0C1F179879CE002D8224 /* ListCollectionViewController.m */; };
 		EAAE0C26179884C6002D8224 /* picture-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = EAAE0C25179884C6002D8224 /* picture-frame.png */; };
 		EAAE0C2917988641002D8224 /* AlbumCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAE0C2817988641002D8224 /* AlbumCollectionViewController.m */; };
@@ -69,6 +71,8 @@
 		0C745F83179808D600CFE801 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0C745F861798090D00CFE801 /* ShowAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAlertView.h; sourceTree = "<group>"; };
 		0C745F871798090D00CFE801 /* ShowAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAlertView.m; sourceTree = "<group>"; };
+		0C8B31D1179FB16C004B19E6 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		0C8B31D4179FB1A8004B19E6 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		0C9199F91796B3EB004B205C /* iOS_Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9199FC1796B3EB004B205C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0C9199FE1796B3EB004B205C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,8 +94,9 @@
 		0C919A2D1796B3ED004B205C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C919A2F1796B3ED004B205C /* iOS_GalleryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_GalleryTests.h; sourceTree = "<group>"; };
 		0C919A301796B3ED004B205C /* iOS_GalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_GalleryTests.m; sourceTree = "<group>"; };
+		EA1DE373179F08AB00031D95 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
+		EA1DE374179F08AB00031D95 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		EA781357179DCC3900ADD792 /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
-		EA781359179DD3AF00ADD792 /* Play.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Play.xib; sourceTree = "<group>"; };
 		EAAE0C1E179879CE002D8224 /* ListCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCollectionViewController.h; sourceTree = "<group>"; };
 		EAAE0C1F179879CE002D8224 /* ListCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCollectionViewController.m; sourceTree = "<group>"; };
 		EAAE0C25179884C6002D8224 /* picture-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picture-frame.png"; sourceTree = "<group>"; };
@@ -105,7 +110,7 @@
 		EAAE0C3F17989843002D8224 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		EAAE0C4017989843002D8224 /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
 		EAAE0C4117989843002D8224 /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
-		EAAE0C4217989843002D8224 /* onTapOnPageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = onTapOnPageDelegate.h; sourceTree = "<group>"; };
+		EAAE0C4217989843002D8224 /* OnTapOnPageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnTapOnPageDelegate.h; sourceTree = "<group>"; };
 		EAAE0C4317989843002D8224 /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
 		EAAE0C4417989843002D8224 /* GalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
 		EADCE0B6179DE35E00D41550 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -116,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8B31D6179FB1AF004B19E6 /* CoreFoundation.framework in Frameworks */,
+				0C8B31D3179FB178004B19E6 /* ImageIO.framework in Frameworks */,
 				EADCE0B8179DE36700D41550 /* MediaPlayer.framework in Frameworks */,
 				EAAE0C3D179891C0002D8224 /* QuartzCore.framework in Frameworks */,
 				0C745F85179808E200CFE801 /* AssetsLibrary.framework in Frameworks */,
@@ -171,7 +178,6 @@
 		0C745F7C1798071800CFE801 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				EAAE0C2F17989006002D8224 /* Gallery */,
 				0C745F8D17980E5C00CFE801 /* Home */,
 				0C745F8E17980E6100CFE801 /* Album */,
 				0C745F9017980E6900CFE801 /* List */,
@@ -240,6 +246,8 @@
 		0C9199FB1796B3EB004B205C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C8B31D4179FB1A8004B19E6 /* CoreFoundation.framework */,
+				0C8B31D1179FB16C004B19E6 /* ImageIO.framework */,
 				EADCE0B6179DE35E00D41550 /* MediaPlayer.framework */,
 				EAAE0C3B179891B8002D8224 /* QuartzCore.framework */,
 				0C745F83179808D600CFE801 /* AssetsLibrary.framework */,
@@ -259,6 +267,7 @@
 				0C919A141796B3EC004B205C /* MainStoryboard_iPhone.storyboard */,
 				0C919A171796B3EC004B205C /* MainStoryboard_iPad.storyboard */,
 				0C745F7C1798071800CFE801 /* TableView */,
+				EAAE0C2F17989006002D8224 /* Gallery */,
 				0C745F891798091200CFE801 /* ShowAlertView */,
 				0C745F671798047100CFE801 /* Ressource */,
 				0C919A031796B3EB004B205C /* Supporting Files */,
@@ -308,8 +317,9 @@
 				EAAE0C3F17989843002D8224 /* PhotoViewController.m */,
 				EAAE0C4017989843002D8224 /* ImageScrollView.h */,
 				EAAE0C4117989843002D8224 /* ImageScrollView.m */,
-				EAAE0C4217989843002D8224 /* onTapOnPageDelegate.h */,
-				EA781359179DD3AF00ADD792 /* Play.xib */,
+				EAAE0C4217989843002D8224 /* OnTapOnPageDelegate.h */,
+				EA1DE373179F08AB00031D95 /* Picture.h */,
+				EA1DE374179F08AB00031D95 /* Picture.m */,
 			);
 			name = Gallery;
 			sourceTree = "<group>";
@@ -400,7 +410,6 @@
 				EAAE0C26179884C6002D8224 /* picture-frame.png in Resources */,
 				EAAE0C2E179887AB002D8224 /* AlbumCell.xib in Resources */,
 				EA781358179DCC3900ADD792 /* playButton.png in Resources */,
-				EA78135A179DD3AF00ADD792 /* Play.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +454,7 @@
 				EAAE0C4517989843002D8224 /* PhotoViewController.m in Sources */,
 				EAAE0C4617989843002D8224 /* ImageScrollView.m in Sources */,
 				EAAE0C4717989843002D8224 /* GalleryViewController.m in Sources */,
+				EA1DE375179F08AB00031D95 /* Picture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

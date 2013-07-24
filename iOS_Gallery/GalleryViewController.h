@@ -10,8 +10,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <ImageIO/ImageIO.h>
 #import "PhotoViewController.h"
-#import "onTapOnPageDelegate.h"
+#import "OnTapOnPageDelegate.h"
+#import "Picture.h"
 
 #define MARGIN_BETWEEN_PICTURE 10
 
@@ -19,8 +21,12 @@
 
 #define IS_IPAD UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
 
+@protocol OnFullPictureBrowsedDelegate <NSObject>
+-(void) onFullPictureBrowsedDelegate:(NSInteger)position image:(UIImage *)image;
+@end
 
-@interface GalleryViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, onTapOnPageDelegate, UIPageViewControllerDataSource>{
+
+@interface GalleryViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, UIPageViewControllerDelegate, OnTapOnPageDelegate, UIPageViewControllerDataSource, OnFullPictureBrowsedDelegate>{
     BOOL mEndOfBrowse;
     int mCurrentPicture;
     NSArray * mSelectedFiles;
@@ -32,9 +38,8 @@
 @property int mPictureBegin;
 @property (strong, nonatomic) UIPageViewController *mPageViewController;
 @property (strong, nonatomic) NSString *mFolderPath;
-@property (nonatomic, copy) NSArray* mThumbnailArray;
+@property (nonatomic, copy) NSArray* mPictureArray;
 @property (nonatomic, copy) NSMutableArray* mAssetsArray;
-@property (nonatomic, copy) NSMutableArray* mFullPictureArray;
 @property (weak, nonatomic) IBOutlet UIScrollView *mThumbnailScrollView;
 
 @end

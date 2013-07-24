@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "GalleryViewController.h"
+#import "Picture.h"
 
 @interface ListCollectionViewController : UICollectionViewController{
     NSMutableArray *mAssets;

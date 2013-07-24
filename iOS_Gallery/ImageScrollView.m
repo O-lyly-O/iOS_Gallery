@@ -116,6 +116,7 @@
     self.zoomScale = 1.0;
 
     _zoomView = [[UIImageView alloc] initWithImage:image];
+    _zoomView.contentMode = UIViewContentModeScaleAspectFit;
     if(IS_PORTRAIT){
         CGFloat statutBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
         CGFloat height = [[UIScreen mainScreen] bounds].size.height-_mHeightBar;
@@ -127,7 +128,6 @@
         CGFloat width = [[UIScreen mainScreen] bounds].size.height;
         _zoomView.bounds = CGRectMake(0, 0,width*2,(height - statutBarHeight)*2);
     }
-    _zoomView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:_zoomView];
     [self configureForImageSize:image.size];
 }

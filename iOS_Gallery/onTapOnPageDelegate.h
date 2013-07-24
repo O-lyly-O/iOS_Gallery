@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol onTapOnPageDelegate <NSObject>
+@protocol OnTapOnPageDelegate <NSObject>
 
 -(void)onTapOnPage;
 -(void)onLongTapOnPage;

@@ -11,6 +11,6 @@
 
 @property (nonatomic) CGFloat mHeightBar;
 @property (nonatomic) UIImage* picture;
-@property (nonatomic) id<onTapOnPageDelegate> mDelegate;
+@property (nonatomic) id<OnTapOnPageDelegate> mDelegate;
 
 @end

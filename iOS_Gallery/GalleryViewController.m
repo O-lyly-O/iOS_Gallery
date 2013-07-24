@@ -10,15 +10,16 @@
 
 @implementation GalleryViewController
 
-@synthesize mThumbnailArray, mPageViewController, mFolderPath, mPictureBegin, mAssetsArray, mFullPictureArray;
+@synthesize mPictureArray, mPageViewController, mFolderPath, mPictureBegin, mAssetsArray;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.mThumbnailScrollView.delegate = self;
     self.mThumbnailScrollView.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.3];
-    mFullPictureArray = [[NSMutableArray alloc] initWithArray:mThumbnailArray];
-    [[[NSThread alloc] initWithTarget:self selector:@selector(browseAssets) object:nil] start];
+    NSArray * assets = [self prepareAssetsToBrowseFullPicture:mPictureBegin];
+    mCurrentPicture = mPictureBegin;
+    [self startBrowsePicture:assets onFullPictureBrowsedDelegate:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -30,11 +31,35 @@
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    if([mThumbnailArray count] != 1){
+    if([mPictureArray count] != 1){
         [self createThumbnailScrollView];
     }
     [self updateThumbnailScrollViewPositionWithPage:mCurrentPicture animated:YES];
     [self updatePageViewControllerPositionWithPage];
+}
+
+-(UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+-(CGSize)getNewSize:(CGSize)size{
+    CGFloat screenWidth = self.view.frame.size.width;
+    CGFloat screenHeight = self.view.frame.size.height;
+    
+    if((size.width - screenWidth) < 0 || (size.height - screenHeight) < 0){
+        return CGSizeMake(size.width, size.height);
+    }else{
+        if((size.width - screenWidth) < (size.height - screenHeight)){
+            return CGSizeMake((size.width*screenHeight/size.height)*3, screenHeight*3);
+        }else{
+            return CGSizeMake(screenWidth*3, (size.height*screenWidth/size.width)*3);
+        }
+    }
 }
 
 /* ---------------------------------- THUMBNAIL SCROLL VIEW ---------------------------------- */
@@ -52,8 +77,8 @@
     CGFloat screenMiddle = self.view.frame.size.width/2;
     CGFloat scrollViewHeight = self.mThumbnailScrollView.frame.size.height;
     CGSize sizeMiniatureScroll = CGSizeMake(0, scrollViewHeight);
-    for (int i=0; i<[mThumbnailArray count]; i++) {
-        UIImageView *image = [[UIImageView alloc] initWithImage:[mThumbnailArray objectAtIndex:i]];
+    for (int i=0; i<[mPictureArray count]; i++) {
+        UIImageView *image = [[UIImageView alloc] initWithImage:[[mPictureArray objectAtIndex:i] getThumbnail]];
         image.contentMode = UIViewContentModeScaleAspectFit;
         if(i == 0){
             CGFloat imageWidth = (scrollViewHeight*image.frame.size.width/image.frame.size.height);
@@ -62,7 +87,7 @@
         }else{
             CGFloat imageWidth = (scrollViewHeight*image.frame.size.width/image.frame.size.height);
             [image setFrame:CGRectMake(sizeMiniatureScroll.width,0,imageWidth,scrollViewHeight)];
-            if(i != [mThumbnailArray count] - 1){
+            if(i != [mPictureArray count] - 1){
                 sizeMiniatureScroll.width += image.frame.size.width + MARGIN_BETWEEN_PICTURE;
             }else{
                 sizeMiniatureScroll.width += screenMiddle + image.frame.size.width/2;
@@ -89,18 +114,24 @@
 }
 
 - (void)tapOnThumbnail:(UITapGestureRecognizer *)tapGesture{
-    [self updateThumbnailScrollViewPositionWhenTap:self.mThumbnailScrollView point:[tapGesture locationInView:self.mThumbnailScrollView]];  
+    [self updateThumbnailScrollViewPositionWhenTap:self.mThumbnailScrollView point:[tapGesture locationInView:self.mThumbnailScrollView]];
+    NSArray * assets = [self prepareAssetsToBrowseFullPicture:mCurrentPicture];
+    [self startBrowsePicture:assets onFullPictureBrowsedDelegate:self];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     [self updateThumbnailScrollViewPosition:scrollView];   
     self.mPageViewController.view.userInteractionEnabled = YES;
+    NSArray * assets = [self prepareAssetsToBrowseFullPicture:mCurrentPicture];
+    [self startBrowsePicture:assets onFullPictureBrowsedDelegate:self];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if(!decelerate){
         [self updateThumbnailScrollViewPosition:scrollView];
         self.mPageViewController.view.userInteractionEnabled = YES;
+        NSArray * assets = [self prepareAssetsToBrowseFullPicture:mCurrentPicture];
+        [self startBrowsePicture:assets onFullPictureBrowsedDelegate:self];
     }
 }
 
@@ -168,11 +199,12 @@
 
 /* ---------------------------------- PAGE VIEW CONTROLLER ---------------------------------- */
 -(void)createPageController:(int)firstPage{
-    PhotoViewController* page = [PhotoViewController photoViewControllerForPicture:[mFullPictureArray objectAtIndex:firstPage] delegate:self];
+    PhotoViewController* page = [PhotoViewController photoViewControllerForPicture:[[mPictureArray objectAtIndex:firstPage] getHdThumbnail] delegate:self];
     if (page != nil)
     {
-        if([mPageViewController.viewControllers count]>0)
+        if([mPageViewController.viewControllers count]>0){
             [[mPageViewController.viewControllers objectAtIndex:0] flushPicture];
+        }
         [mPageViewController removeFromParentViewController];
         [mPageViewController.view removeFromSuperview];
          mPageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
@@ -198,41 +230,43 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerBeforeViewController:(PhotoViewController *)vc
 {
     NSUInteger index = 0;
-    while([mFullPictureArray count]>index) {
-        if([mFullPictureArray objectAtIndex:index] == vc.picture || [mFullPictureArray objectAtIndex:index] == vc.picture)
+    while([mPictureArray count]>index) {
+        if([[mPictureArray objectAtIndex:index] getThumbnail] == vc.picture || [[mPictureArray objectAtIndex:index] getHdThumbnail] == vc.picture)
             break;
         index++;
     }
     if(index == 0){return nil;}
-    return [PhotoViewController photoViewControllerForPicture:[mFullPictureArray objectAtIndex:index-1] delegate:self];
+    return [PhotoViewController photoViewControllerForPicture:[[mPictureArray objectAtIndex:index-1] getHdThumbnail] delegate:self];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerAfterViewController:(PhotoViewController *)vc
 {
     NSUInteger index = 0;
-    while([mFullPictureArray count]>index) {
-        if([mFullPictureArray objectAtIndex:index] == vc.picture)
+    while([mPictureArray count]>index) {
+        if([[mPictureArray objectAtIndex:index] getThumbnail] == vc.picture || [[mPictureArray objectAtIndex:index] getHdThumbnail] == vc.picture)
             break;
         index++;
     }
-    if(index >= [mFullPictureArray count] - 1){return nil;}
-    return [PhotoViewController photoViewControllerForPicture:[mFullPictureArray objectAtIndex:index+1] delegate:self];
+    if(index >= [mPictureArray count] - 1){return nil;}
+    return [PhotoViewController photoViewControllerForPicture:[[mPictureArray objectAtIndex:index+1] getHdThumbnail] delegate:self];
 }
-
 
 -(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed{
     PhotoViewController* viewController = [previousViewControllers objectAtIndex:0];
     int index=0;
     viewController = [[pageViewController viewControllers]objectAtIndex:0];
-    for(UIImage* tmp in mFullPictureArray){
-        if(tmp == [viewController picture]){
-            mCurrentPicture = index;
-            [self updateThumbnailScrollViewPositionWithPage:mCurrentPicture animated:YES];
+    for(Picture* tmp in mPictureArray){
+        if([tmp getHdThumbnail] == [viewController picture] || [tmp getThumbnail] == [viewController picture]){
+            mCurrentPicture = index;            
+            NSArray * assets = [self prepareAssetsToBrowseFullPicture:mCurrentPicture];
+            [self startBrowsePicture:assets onFullPictureBrowsedDelegate:self];
             if([[[mAssetsArray objectAtIndex:mCurrentPicture] valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypeVideo]){
                 [self addPlayButton];
             }else{
                 [mPlayButton removeFromSuperview];
             }
+            [self updateThumbnailScrollViewPositionWithPage:mCurrentPicture animated:YES];
+            break;
         }
         index++;
     }
@@ -250,7 +284,9 @@
     }else{
         [mPlayButton removeFromSuperview];
     }
-    [mPageViewController setViewControllers:[NSArray arrayWithObject:[PhotoViewController photoViewControllerForPicture:[mFullPictureArray objectAtIndex:mCurrentPicture] delegate:self]] direction:UIPageViewControllerNavigationDirectionForward
+    if([mPageViewController.viewControllers count]>0 && [[mPageViewController.viewControllers objectAtIndex:0] class] == [PhotoViewController class])
+        [[mPageViewController.viewControllers objectAtIndex:0] flushPicture];
+    [mPageViewController setViewControllers:[NSArray arrayWithObject:[PhotoViewController photoViewControllerForPicture:[[mPictureArray objectAtIndex:mCurrentPicture] getHdThumbnail] delegate:self]] direction:UIPageViewControllerNavigationDirectionForward
                                    animated:NO
                                  completion:NULL];
 }
@@ -268,21 +304,6 @@
 -(void)showHideBar{
     [[UIApplication sharedApplication] setStatusBarHidden:![UIApplication sharedApplication].statusBarHidden withAnimation:UIStatusBarAnimationSlide];
     [self.navigationController setNavigationBarHidden:!self.navigationController.navigationBarHidden animated:YES] ;
-}
-
--(void)browseAssets{
-    int position = 0;
-    for(ALAsset* asset in mAssetsArray){
-        ALAssetRepresentation *assetRepresentation = [asset defaultRepresentation];
-        UIImage *fullScreenImage = [UIImage imageWithCGImage:[assetRepresentation fullResolutionImage] scale:[assetRepresentation scale] orientation:(UIImageOrientation)[assetRepresentation orientation]];
-        [self refreshThumbnailWithFullScreenImage:position image:fullScreenImage];
-        position++;
-    }
-}
-
--(void)refreshThumbnailWithFullScreenImage:(int)position image:(UIImage*)image{
-    [mFullPictureArray replaceObjectAtIndex:position withObject:image];
-    [self updatePageViewControllerPositionWithPage];
 }
 
 -(void)addPlayButton{
@@ -314,6 +335,66 @@
     [self.view addSubview:mPlayer.view];
     [mPlayer setFullscreen:YES animated:YES];
     [mPlayer play];
+}
+
+-(NSArray*)prepareAssetsToBrowseFullPicture:(NSInteger) pos {
+    NSMutableArray * assetsForBrowse = [[NSMutableArray alloc]init];
+    int tmpPos = 0;
+    for(Picture* tmp in mPictureArray) {
+        if((tmpPos<pos-1||tmpPos>pos+1) && [tmp isInBrowseHdThumbnail]){
+            [tmp flushHdThumbnail];
+        }
+        tmpPos++;
+    }
+    if(![[mPictureArray objectAtIndex:pos] isInBrowseHdThumbnail]) {
+        [assetsForBrowse addObject:[mAssetsArray objectAtIndex:pos]];
+        [[mPictureArray objectAtIndex:pos] setInBrowseHdThumbnail:true];
+    }
+    if(pos<([mPictureArray count]-1) && ![[mPictureArray objectAtIndex:(pos+1)] isInBrowseHdThumbnail]) {
+        [assetsForBrowse addObject:[mAssetsArray objectAtIndex:pos+1]];
+        [[mPictureArray objectAtIndex:pos+1] setInBrowseHdThumbnail:true];
+    }
+    if(pos>0 && ![[mPictureArray objectAtIndex:(pos-1)] isInBrowseHdThumbnail]) {
+        [assetsForBrowse addObject:[mAssetsArray objectAtIndex:pos-1]];
+        [[mPictureArray objectAtIndex:pos-1] setInBrowseHdThumbnail:true];
+    }
+    return [[NSArray alloc] initWithArray:assetsForBrowse];
+}
+
+-(void)startBrowsePicture:(NSArray *)assets onFullPictureBrowsedDelegate:(id<OnFullPictureBrowsedDelegate>) onFullPictureBrowsedDelegate {
+    NSArray * params = [[NSArray alloc] initWithObjects:assets, onFullPictureBrowsedDelegate, nil];
+    [[[NSThread alloc] initWithTarget:self selector:@selector(browseFullPicture:) object:params] start];
+}
+
+-(void)browseFullPicture:(NSArray *)params{
+    NSArray* assets = [params objectAtIndex:0];
+    id<OnFullPictureBrowsedDelegate> onFullPictureBrowsedDelegate = [params objectAtIndex:1];
+    for(int i=0; i<[assets count]; i++){
+        ALAssetRepresentation *assetRepresentation = [[assets objectAtIndex:i] defaultRepresentation];
+        UIImage *fullScreenImage = [UIImage imageWithCGImage:[assetRepresentation fullScreenImage] scale:[assetRepresentation scale] orientation:0];
+        [onFullPictureBrowsedDelegate onFullPictureBrowsedDelegate:[mAssetsArray indexOfObject:[assets objectAtIndex:i]] image:fullScreenImage];
+    }
+}
+
+-(void)onFullPictureBrowsedDelegate:(NSInteger)position image:(UIImage *)image{
+    if(position >= mCurrentPicture-1 && position <= mCurrentPicture+1){
+        NSArray * params = [[NSMutableArray alloc]initWithObjects:image,[NSNumber numberWithInt:position], nil];
+        [self performSelectorOnMainThread:@selector(updateThumbnailOnMainThread:)
+                               withObject:params
+                            waitUntilDone:NO];
+    }
+}
+
+/*
+ * params[0] = image
+ * params[1] = position
+ */
+-(void)updateThumbnailOnMainThread:(NSArray *)params
+{
+    UIImage * image = [params objectAtIndex:0];
+    int position = [[params objectAtIndex:1] intValue];
+    [[mPictureArray objectAtIndex:position] setHdThumbnail:image];
+    [self updatePageViewControllerPositionWithPage];
 }
 
 @end
